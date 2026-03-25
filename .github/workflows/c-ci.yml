@@ -3,27 +3,27 @@ name: C CI
 on: [push]
 
 jobs:
-#  build_x86:
-#    runs-on: ubuntu-latest
-#    name: Build on ubuntu-24.04 for x86_64
-#    steps:
-#    - uses: actions/checkout@v5
-#    - name: Run make commands
-#      run: |
-#        ./configure
-#        make
-#        make check
-#
-#  build_arm64:
-#    runs-on: ubuntu-24.04-arm
-#    name: Build on ubuntu-24.04 for arm64
-#    steps:
-#    - uses: actions/checkout@v5
-#    - name: Run make commands
-#      run: |
-#        ./configure
-#        make
-#        make check
+  build_x86:
+    runs-on: ubuntu-latest
+    name: Build on ubuntu-24.04 for x86_64
+    steps:
+    - uses: actions/checkout@v5
+    - name: Run make commands
+      run: |
+        ./configure
+        make
+        make check
+
+  build_arm64:
+    runs-on: ubuntu-24.04-arm
+    name: Build on ubuntu-24.04 for arm64
+    steps:
+    - uses: actions/checkout@v5
+    - name: Run make commands
+      run: |
+        ./configure
+        make
+        make check
 
   build_s390x_qemu:
     runs-on: ubuntu-24.04
@@ -43,13 +43,13 @@ jobs:
             make
             make check
 
-#  build_s390x:
-#    runs-on: ubuntu-24.04-s390x
-#    name: Build on ubuntu-24.04 for s390x
-#    steps:
-#    - uses: actions/checkout@v5
-#    - name: Run make commands
-#      run: |
-#        ./configure
-#        make
-#        make check
+  build_s390x:
+    runs-on: ubuntu-24.04-s390x
+    name: Build on ubuntu-24.04 for s390x
+    steps:
+    - uses: actions/checkout@v5
+    - name: Run make commands
+      run: |
+        ./configure
+        make
+        make check
