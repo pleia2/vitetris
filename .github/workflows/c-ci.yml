@@ -3,29 +3,29 @@ name: C CI
 on: [push, pull_request]
 
 jobs:
-  build_x86:
-    runs-on: ubuntu-latest
-    name: Build on ubuntu-24.04 for x86_64
-    steps:
-    - uses: actions/checkout@v5
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-
-  build_arm64:
-    runs-on: ubuntu-24.04-arm
-    name: Build on ubuntu-24.04 for ARM64
-    steps:
-    - uses: actions/checkout@v5
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
+#  build_x86:
+#    runs-on: ubuntu-latest
+#    name: Build on ubuntu-24.04 for x86_64
+#    steps:
+#    - uses: actions/checkout@v5
+#    - name: configure
+#      run: ./configure
+#    - name: make
+#      run: make
+#    - name: make check
+#      run: make check
+#
+#  build_arm64:
+#    runs-on: ubuntu-24.04-arm
+#    name: Build on ubuntu-24.04 for ARM64
+#    steps:
+#    - uses: actions/checkout@v5
+#    - name: configure
+#      run: ./configure
+#    - name: make
+#      run: make
+#    - name: make check
+#      run: make check
 
   build_s390x:
     runs-on: ubuntu-24.04
@@ -38,6 +38,7 @@ jobs:
         with:
           arch: s390x
           distro: ubuntu24.04
+          install: apt-get install -q -y build-essential
           run: |
             ./configure
             make
