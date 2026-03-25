@@ -39,12 +39,9 @@ jobs:
           arch: s390x
           distro: ubuntu24.04
           install: |
-            apt update -q -y
-            apt install -q -y build-essential
+            apt-get update -y
+            apt-get install -y build-essential
           run: |
             ./configure
             make
             make check
-      - name: Get the output
-        run: |
-          echo "The configure, make, make check output was: ${{ steps.runcmd.outputs.uname }}"
