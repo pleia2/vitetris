@@ -38,7 +38,9 @@ jobs:
         with:
           arch: s390x
           distro: ubuntu24.04
-          install: apt-get install -q -y build-essential
+          install: |
+            apt update -q -y
+            apt install -q -y build-essential
           run: |
             ./configure
             make
