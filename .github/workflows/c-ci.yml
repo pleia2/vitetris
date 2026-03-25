@@ -38,9 +38,9 @@ jobs:
       arch: s390x
       distro: ubuntu24.04
       run: |
-      ./configure
-      make
-      make check
+        ./configure
+        make
+        make check
     - name: Get the output
     # Echo the `uname` output parameter from the `runcmd` step
     run: |
