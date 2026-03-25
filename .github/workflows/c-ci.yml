@@ -8,24 +8,22 @@ jobs:
     name: Build on ubuntu-24.04 for x86_64
     steps:
     - uses: actions/checkout@v5
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
+    - name: Run make commands
+      run: |
+        ./configure
+        make
+        make check
 
   build_arm64:
     runs-on: ubuntu-24.04-arm
-    name: Build on ubuntu-24.04 for ARM64
+    name: Build on ubuntu-24.04 for arm64
     steps:
     - uses: actions/checkout@v5
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
+    - name: Run make commands
+      run: |
+        ./configure
+        make
+        make check
 
   build_s390x_qemu:
     runs-on: ubuntu-24.04
@@ -33,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - uses: uraimo/run-on-arch-action@v3
-        name: Run Makefile commands
+        name: Run make commands
         id: runcmd
         with:
           arch: s390x
@@ -51,9 +49,8 @@ jobs:
     name: Build on ubuntu-24.04 for s390x
     steps:
     - uses: actions/checkout@v5
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
+    - name: Run make commands
+      run: |
+        ./configure
+        make
+        make check
