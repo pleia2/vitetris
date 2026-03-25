@@ -20,6 +20,10 @@ build: src/src-conf.mk
 	@echo stripping symbols to reduce program size:
 	-strip --strip-all $(PROGNAME)
 
+check: $(PROGNAME)
+	@test -x $(PROGNAME) || { echo "Error: $(PROGNAME) is not executable or does not exist"; exit 1; }
+	@echo "Binary is executable."
+
 gameserver: src/netw/gameserver.c
 	cd src/netw; $(MAKE) gameserver
 	mv -f src/netw/gameserver .
