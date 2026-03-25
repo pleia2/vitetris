@@ -43,5 +43,5 @@ jobs:
             make
             make check
       - name: Get the output
-          run: |
-            echo "The configure, make, make check output was: ${{ steps.runcmd.outputs.uname }}"
+        run: |
+          echo "The configure, make, make check output was: ${{ steps.runcmd.outputs.uname }}"
