@@ -1,5 +1,7 @@
 VITETRIS - Virtual terminal *tris clone
 
+  Using this repository for testing GitHub Actions workflows at CPOSC!
+
   Homepage: http://victornils.net/tetris
 
   Rotation, scoring, levels and speed should resemble the early Tetris games
